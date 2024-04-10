@@ -1,12 +1,12 @@
-CC ?= gcc
+CC?=gcc
 
-CFLAGS = -Wall -Wextra -g
+CFLAGS=-Wall -Wextra -g
 
-SRCS = helloworld.c
+SRCS=helloworld.c
 
-OBJS = $(SRCS:.c=.o)
+OBJS=$(SRCS:.c=.o)
 
-EXEC = helloworld
+EXEC=helloworld
 
 all: $(EXEC)
 
