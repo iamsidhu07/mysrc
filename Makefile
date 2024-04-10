@@ -1,22 +1,10 @@
-CC?=gcc
+SRC := helloworld.c
+CC ?= gcc
+OBJ := helloworld
 
-CFLAGS=-Wall -Wextra -g
+install: $(OBJ)
+	$(CC) $(SRC) -o $(OBJ)
 
-SRCS=helloworld.c
-
-OBJS=$(SRCS:.c=.o)
-
-EXEC=helloworld
-
-all: $(EXEC)
-
-# Compile source files into object files
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-# Link object files into executable
-$(EXEC): $(OBJS)
-	$(CC) $(OBJS) -o $(EXEC)
 clean:
-	rm -f $(OBJS) $(EXEC)
-
+	rm $(OBJ)
+	
